@@ -62,6 +62,7 @@ obrazów, które wspiera Qt.
 Summary:	Data files for %{kaname}
 Summary(pl.UTF-8):	Dane dla %{kaname}
 Group:		X11/Applications
+Requires(post,postun):	desktop-file-utils
 Obsoletes:	ka5-%{kaname}-data < %{version}
 BuildArch:	noarch
 
@@ -103,6 +104,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
+
+%post data
+%update_desktop_database_post
+
+%postun data
+%update_desktop_database_postun
+
 
 %files
 %defattr(644,root,root,755)

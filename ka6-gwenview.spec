@@ -9,13 +9,14 @@ Summary:	Simple image viewer
 Summary(pl.UTF-8):	Prosta przeglądarka obrazów
 Name:		ka6-%{kaname}
 Version:	25.08.2
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
 # Source0-md5:	fa0d649825476b965ad56bc49a452ef5
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt6MultimediaWidgets-devel >= %{qtver}
 BuildRequires:	cfitsio-devel
 BuildRequires:	cmake >= 3.20
 BuildRequires:	exiv2-devel
@@ -25,8 +26,10 @@ BuildRequires:	kImageAnnotator-qt6-devel
 BuildRequires:	ka6-libkdcraw-devel >= %{kdeappsver}
 BuildRequires:	kf6-baloo-devel >= %{kframever}
 BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf6-kiconthemes-devel >= %{kframever}
 BuildRequires:	kf6-kio-devel >= %{kframever}
 BuildRequires:	kf6-kparts-devel >= %{kframever}
+BuildRequires:	kf6-purpose-devel >= %{kframever}
 BuildRequires:	lcms2-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
@@ -117,10 +120,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gwenview
 %attr(755,root,root) %{_bindir}/gwenview_importer
-%attr(755,root,root) %{_libdir}/libgwenviewlib.so.*.*
+%{_libdir}/libgwenviewlib.so.*.*
 %ghost %{_libdir}/libgwenviewlib.so.5
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kfileitemaction/slideshowfileitemaction.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/parts/gvpart.so
+%{_libdir}/qt6/plugins/kf6/kfileitemaction/slideshowfileitemaction.so
+%{_libdir}/qt6/plugins/kf6/parts/gvpart.so
 
 %files data -f %{kaname}.lang
 %defattr(644,root,root,755)

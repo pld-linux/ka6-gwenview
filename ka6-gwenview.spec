@@ -9,7 +9,7 @@ Summary:	Simple image viewer
 Summary(pl.UTF-8):	Prosta przeglądarka obrazów
 Name:		ka6-%{kaname}
 Version:	25.12.2
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -17,6 +17,7 @@ Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kan
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6MultimediaWidgets-devel >= %{qtver}
+BuildRequires:	Qt6WaylandClient-devel >= %{qtver}
 BuildRequires:	cfitsio-devel
 BuildRequires:	cmake >= 3.20
 BuildRequires:	exiv2-devel

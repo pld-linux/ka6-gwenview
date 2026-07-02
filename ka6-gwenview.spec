@@ -1,19 +1,19 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	26.04.2
+%define		kdeappsver	26.04.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		gwenview
 Summary:	Simple image viewer
 Summary(pl.UTF-8):	Prosta przeglądarka obrazów
 Name:		ka6-%{kaname}
-Version:	26.04.2
+Version:	26.04.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	5cd28eeb19d21b12fa82f5f96511a332
+# Source0-md5:	e5f5de769772d49975243e24dd95f3af
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6MultimediaWidgets-devel >= %{qtver}
